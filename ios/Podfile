@@ -12,7 +12,7 @@ target 'kpfoundation' do
   #   # Pods for testing
   # end
 
-  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
 
   # target 'kpfoundationTests' do
   #   inherit! :search_paths

@@ -7,7 +7,7 @@ const colors = {
   TEXT:'#0f0f0f',
   ICON_LIGHT:'#b2b2b2',
   ICON_COLOR:'#888',
-  BACKGROUND_PRIMARY:'#F4F6FB',
+  BACKGROUND_PRIMARY:'#f8f9fa',
   BORDER:'#f0f0f0',
   BORDER_CARD:'#f8f8f8',
   SUB_TITLE:'#555',

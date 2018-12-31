@@ -1,32 +1,31 @@
-import React, { Component } from 'react';
-import { SafeAreaView, Text, View, Image } from 'react-native';
+import React, { Component } from "react";
+import { SafeAreaView ,ScrollView} from "react-native";
 import { inject, observer } from "mobx-react";
-import _styles from '../../styles';
-import { ICONS } from '../../modules';
-import Header from '../../components/Header'
-
+import _styles from "../../styles";
+import ImageSlider from "../../components/Slider";
+import Explore from '../../components/Explore';
+import Chapter from "../../components/Chapter";
 
 @inject("environment")
 @observer
-
 export default class HomeScreen extends Component {
+  constructor(props) {
+    super(props);
+  }
 
-    constructor(props) {
-        super(props)
-    }
+  componentDidMount() {
+    this.props.environment.fetchData();
+  }
 
-    componentDidMount() {
-        this.props.environment.fetchData();
-    }
-
-    render() {
-        return (
-            <SafeAreaView style={_styles.containerPrimary}>
-                <Header/>
-               
-            </SafeAreaView>
-        );
-    }
-};
-
-
+  render() {
+    return (
+      <SafeAreaView style={_styles.containerPrimary}>
+        <ScrollView>
+        <ImageSlider />
+        <Chapter/>
+        <Explore />
+        </ScrollView>
+      </SafeAreaView>
+    );
+  }
+}

@@ -4,6 +4,7 @@ const { width: viewportWidth, height: viewportHeight } = Dimensions.get(
 );
 
 const layout = {
+  GRID_SPACING:8,
   BODY_HORIZONTAL: 15,
   BODY_HORIZONTAL_ACTION:30,
   PADDING: 15,
@@ -25,7 +26,10 @@ const layout = {
   END_LINE_GRADIENT_V2:{x: 0, y: 0.25},
   CARD:350,
   CARD_RADIUS: 12,
-  CARD_PENDING:20
+  CARD_PENDING:20,
+  FONT_SIZE:16,
+  FONT_H4:24,
+  FONT_H5:18,
 };
 
 module.exports = layout;
