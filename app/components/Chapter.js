@@ -64,37 +64,37 @@ export default (Chapter = () => {
 });
 
 const styles = StyleSheet.create({
-    chapterContaint:{
-        flexDirection:'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    chapterText:{
-        fontSize:14,
-        textAlign: 'center',
-        color:COLORS.TEXT
-    },
+  chapterContaint: {
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  chapterText: {
+    fontSize: 14,
+    textAlign: "center",
+    color: COLORS.TEXT
+  },
   NavIcon: {
     fontSize: 32,
-    color: COLORS.WHITE,
+    color: COLORS.WHITE
   },
   GridChapter: {
-    width: LAYOUT.VIEW_PORT_WIDTH/4,
-    padding:8,
-    alignItems: 'center'
+    width: LAYOUT.VIEW_PORT_WIDTH / 4,
+    padding: 8,
+    alignItems: "center"
   },
   NavContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
     paddingVertical: LAYOUT.PADDING,
-    backgroundColor: COLORS.WHITE,
+    backgroundColor: COLORS.WHITE
   },
   cardTest: {
     alignItems: "center",
     height: 60,
     width: 60,
-    borderRadius: 50,
-    justifyContent: 'center',
+    borderRadius: 60,
+    justifyContent: "center",
     marginBottom: LAYOUT.PADDING
   }
 });

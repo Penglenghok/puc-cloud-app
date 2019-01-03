@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import {
   Text,
   View,
@@ -9,13 +9,13 @@ import {
 } from "react-native";
 import { ICONS, COLORS, LAYOUT } from "../modules";
 
-export default (Explore = () => {
+export default (Admission = ({onRegister}) => {
   return (
     <View style={styles.explore}>
       <Text style={styles.exploreText}>Admissions</Text>
       <View style={styles.matBox}>
         <View style={styles.matGrid}>
-          <TouchableOpacity style={styles.matButton}>
+          <TouchableOpacity onPress={onRegister} style={styles.matButton}>
             <Image style={styles.matIcon} source={ICONS.REGISTER_TESTING} />
             <Text style={styles.matButtonText}>Register Testing</Text>
           </TouchableOpacity>
@@ -39,11 +39,6 @@ export default (Explore = () => {
           </TouchableOpacity>
         </View>
       </View>
-
-      <View style={styles.academic}>
-        <Text style={styles.exploreText}>Academic Programs</Text>
-        <ScrollView horizontal="true" />
-      </View>
     </View>
   );
 });
@@ -55,7 +50,7 @@ const styles = StyleSheet.create({
   },
   exploreText: {
     fontSize: LAYOUT.FONT_H4,
-    fontWeight: "700",
+    fontWeight: "600",
     paddingHorizontal: LAYOUT.GRID_SPACING,
     marginLeft: 10
   },
@@ -69,7 +64,8 @@ const styles = StyleSheet.create({
     padding: LAYOUT.GRID_SPACING,
     flexDirection: "row",
     flexWrap: "wrap",
-    justifyContent: "space-between"
+    justifyContent: "space-between",
+    
   },
   matButton: {
     backgroundColor: COLORS.WHITE,
@@ -91,11 +87,21 @@ const styles = StyleSheet.create({
     color: COLORS.TEXT,
     fontWeight: "600",
     fontSize: LAYOUT.FONT_H5,
-    textAlign: "center"
+    textAlign: "center",
+    height: 44,
   },
   matIcon: {
     width: 90,
     height: 90,
     marginBottom: LAYOUT.GRID_SPACING
+  },
+  academic: {
+    paddingHorizontal: LAYOUT.PADDING
+  },
+  academicBox: {
+    backgroundColor: "black",
+    height: 200,
+    width: LAYOUT.VIEW_PORT_WIDTH - 50,
+    margin: LAYOUT.GRID_SPACING
   }
 });

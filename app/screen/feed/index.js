@@ -1,20 +1,22 @@
-import React, { Component } from 'react'
-import { Text, View,StyleSheet } from 'react-native'
+import React, { Component } from "react";
+import { Text, SafeAreaView, StyleSheet, Dimensions } from "react-native";
+import UnderConstruction from "../../components/UnderConstruction";
+
 export default class FeedScreen extends Component {
   render() {
     return (
-        <View style={styles.container}>
-        </View>
+      <SafeAreaView style={styles.container}>
+        <UnderConstruction />
+      </SafeAreaView>
     );
-}
+  }
 }
 
 // define your styles
 const styles = StyleSheet.create({
-container: {
+  container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#2c3e50',
-},
+    justifyContent: "center",
+    alignItems: "center"
+  }
 });

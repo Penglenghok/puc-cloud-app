@@ -1,6 +1,6 @@
 
 export function pushToArray(querySnapshot) {
-  return  querySnapshot.doc.map(m=>({
+  return  querySnapshot.docs.map(m=>({
         id:m.id,
         ...m.data()
     }))

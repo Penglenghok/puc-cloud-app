@@ -203,7 +203,40 @@ export default StyleSheet.create({
   h5: {
     fontSize: 16,
     fontWeight: "500"
+  },
+  modalContent: {
+    backgroundColor: "white",
+    paddingBottom: 22,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 4,
+    borderColor: "rgba(0, 0, 0, 0.1)"
+  },
+  bottomModal: {
+    justifyContent: "flex-end",
+    margin: 0
+  },
+  modalButton:{
+    flexDirection:'row',
+    alignItems: 'center',
+    paddingHorizontal:LAYOUT.BODY_HORIZONTAL_ACTION,
+    paddingVertical:LAYOUT.PADDING,
+  },
+  divider:{
+    borderTopColor:COLORS.DIVIDER,
+    borderTopWidth: 1 
+  },
+  modalButtonIcon:{
+    fontSize:24,
+    color: COLORS.ICON_COLOR,
+    marginRight: 24,
+  },
+  modalButtonText:{
+    flex:1,
+    fontSize: 16,
+    color: COLORS.TEXT
   }
+
 });
 
 export const date = {
@@ -239,5 +272,6 @@ export const date = {
   },
   placeholderText: {
     fontSize: 16
-  }
+  },
+  
 };

@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import { ICONS, COLORS } from "../modules";
 import _style from "../styles";
-import Icon from "react-native-vector-icons/Ionicons";
+import Icon from "react-native-vector-icons/Feather";
 
 export default (Header = () => {
   return (
@@ -27,7 +27,7 @@ export default (Header = () => {
           <Icon style={styles.icon} name="md-paper" size={26} />
         </TouchableOpacity> */}
         <TouchableOpacity>
-          <Icon name="ios-search" size={26} />
+          <Icon color={COLORS.ICON_COLOR} name="search" size={26} />
         </TouchableOpacity>
       </View>
     </View>
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.WHITE,
     alignItems: "center",
     borderBottomWidth: 1,
-    borderColor: "#efefef"
+    borderColor: "#f8f8f8"
   },
   flexrow: {
     flex: 1,
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
   menu: {
     flexDirection: "row"
   },
-  icon: {
-    paddingRight: 24
-  }
+  // icon: {
+  //   paddingRight: 24
+  // }
 });

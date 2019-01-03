@@ -12,7 +12,11 @@ import ProfileScreen from "../screen/profile";
 import NotificationScreen from "../screen/notification";
 import MoreScreen from "../screen/more";
 import FeedScreen from "../screen/feed";
-import Ionicons from "react-native-vector-icons/Ionicons";
+import Ionicons from "react-native-vector-icons/Feather";
+import RegisterScreen from '../screen/register'
+import ProgramScreen from '../screen/register/program'
+import RegisterFormScreen from '../screen/register/registerForm'
+import Header from "../components/Header";
 
 const HomeStack = createStackNavigator({
   Home: {
@@ -20,8 +24,26 @@ const HomeStack = createStackNavigator({
     navigationOptions: {
       headerTitle: <Header />
     }
+  },
+  Register:{
+    screen:RegisterScreen,
+    navigationOptions:{
+      header:null
+    }
+  },
+  Program:{
+    screen:ProgramScreen,
+    navigationOptions:{
+      header:null
+    }
+  },
+  RegisterForm:{
+    screen:RegisterFormScreen,
+    navigationOptions:{
+      header:null
+    }
   }
-});
+},{mode:'card'});
 const ProfileStack = createStackNavigator(
   {
     Profile: ProfileScreen
@@ -47,8 +69,6 @@ const MoreStack = createStackNavigator(
   }
 );
 
-import SettingsScreen from "../screen/settings";
-import Header from "../components/Header";
 
 const TabNavigator = createBottomTabNavigator(
   {
@@ -64,20 +84,20 @@ const TabNavigator = createBottomTabNavigator(
         const { routeName } = navigation.state;
         let iconName;
         if (routeName === "HomeTab") {
-          iconName = `ios-home${focused ? "" : ""}`;
+          iconName = `home${focused ? "" : ""}`;
         } else if (routeName === "FeedTab") {
-          iconName = `ios-list-box${focused ? "" : ""}`;
+          iconName = `compass${focused ? "" : ""}`;
         } else if (routeName === "ProfileTab") {
-          iconName = `ios-person${focused ? "" : ""}`;
+          iconName = `user${focused ? "" : ""}`;
         } else if (routeName === "NotificationTab") {
-          iconName = `ios-notifications${focused ? "" : ""}`;
+          iconName = `bell${focused ? "" : ""}`;
         } else if (routeName === "MoreTab") {
-          iconName = `md-menu${focused ? "" : ""}`;
+          iconName = `menu${focused ? "" : ""}`;
         }
         return (
           <Ionicons
             name={iconName}
-            size={horizontal ? 26 : 26}
+            size={horizontal ? 28 : 28}
             color={tintColor}
           />
         );
@@ -105,7 +125,7 @@ const TabNavigator = createBottomTabNavigator(
     }),
     tabBarOptions: {
       activeTintColor: COLORS.PRIMARY,
-      inactiveTintColor: "black",
+      inactiveTintColor: "rgba(0,0,0,.54)",
       showLabel: false,
       style: {
         elevation: 0,

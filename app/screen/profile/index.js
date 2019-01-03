@@ -1,13 +1,17 @@
 //import liraries
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet,SafeAreaView } from 'react-native';
+import Profile from '../../components/Profile';
+import { ScrollView } from 'react-native-gesture-handler';
 
 // create a component
 export default class ProfileScreen extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text>MyClass</Text>
+            <ScrollView>
+            <Profile/>
+            </ScrollView>
             </View>
         );
     }
@@ -17,8 +21,6 @@ export default class ProfileScreen extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#2c3e50',
     },
 });
