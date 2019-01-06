@@ -12,21 +12,29 @@ import Icon from "react-native-vector-icons/Feather";
 
 export default (MatButton = ({name,onClick}) => {
   return (
-        <TouchableOpacity onPress={onClick}>
+        <TouchableOpacity style={styles.matButton} onPress={onClick}>
             <Text style={styles.text}>{name}</Text>
         </TouchableOpacity>
   );
 });
 
 const styles = StyleSheet.create({
+    matButton:{
+        backgroundColor:COLORS.PRIMARY,
+        borderRadius: 50,
+        minHeight: 48,
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection:'row'
+    },
     icon:{
         fontSize: 28,
         paddingRight: LAYOUT.PADDING,
     },
     text:{
-        flex:1,
-        fontSize:18,
-        color:COLORS.TEXT,
+        fontSize:16,
+        color:COLORS.WHITE,
+        fontWeight: '600'
     },
     header:{
         alignItems: 'center',

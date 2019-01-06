@@ -1,7 +1,7 @@
 const colors = {
   PROFILE:'#37A9FE',
   BLANK: "transparent",
-  PRIMARY: "#2089DC",
+  PRIMARY: "#1da1f2",
   PRIMARY_TEXT: "#FFF",
   DARK: "#333",
   WELCOME_INDICATOR: "#FFF",

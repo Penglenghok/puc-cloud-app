@@ -30,6 +30,7 @@ const layout = {
   FONT_SIZE:16,
   FONT_H4:24,
   FONT_H5:18,
+  BIG_PADDING:40,
 };
 
 module.exports = layout;

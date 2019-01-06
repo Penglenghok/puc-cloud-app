@@ -36,9 +36,10 @@ export default (ImageSlider = () => {
           />
         }
         paginationStyle={{
-          bottom: 5,
+          bottom: 5
         }}
-        loop autoplay
+        loop
+        autoplay
       >
         <View style={styles.slide}>
           <Image style={styles.image} source={ICONS.SLID1} />
@@ -68,12 +69,11 @@ const styles = StyleSheet.create({
     backgroundColor: "transparent"
   },
 
-
   image: {
     flex: 1,
-    resizeMode: 'cover',
-    alignSelf: 'stretch',
+    resizeMode: "cover",
+    alignSelf: "stretch",
     width: null,
-    height: null,
+    height: null
   }
 });

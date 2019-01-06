@@ -1,14 +1,14 @@
 //import liraries
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-
+import { View, Text, StyleSheet,SafeAreaView } from 'react-native';
+import UnderConstruction from '../../components/UnderConstruction'
 // create a component
 export default class MoreScreen extends Component {
     render() {
         return (
-            <View style={styles.container}>
-                <Text>MyClass</Text>
-            </View>
+            <SafeAreaView style={styles.container}>
+                <UnderConstruction/>
+            </SafeAreaView>
         );
     }
 }
@@ -19,6 +19,5 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#2c3e50',
     },
 });

@@ -38,8 +38,10 @@ const icons = {
 
   UNDER_CONSTRUCTION:require('../images/under-construction.png'),
   SIGN_IN_COVER:require('../images/login-image.png'),
-
-  
+  IMAGE_COVER:require('../images/profilecover.jpeg'),
+  IMAGE_COVER_1:require('../images/profilecover1.jpeg'),
+  PUC_CAMPUS:require('../images/puc1.jpg'),
+  PUC_CAMPUS_2:require('../images/puc2.jpg'),
 };
 
 module.exports = icons;

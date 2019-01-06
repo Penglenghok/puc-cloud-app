@@ -1,0 +1,35 @@
+export const transcriptlist=[
+    {
+        code:'COMP 110',
+        name:'Introduction to Computers',
+        hours:48,
+        field:null,
+        creditAttem:4,
+        creditEarned:3,
+        alphaGrade:'C',
+        gradePoint:2.00,
+        totalPoint:6.00,
+    },
+    {
+        code:'ENGL 110',
+        name:'College English I: Reading and Complosition',
+        hours:48,
+        field:null,
+        creditAttem:3,
+        creditEarned:3,
+        alphaGrade:'A-',
+        gradePoint:3.67,
+        totalPoint:11.01,
+    },
+    {
+        code:'NATS 102',
+        name:'Enviromental Science',
+        hours:48,
+        field:null,
+        creditAttem:3,
+        creditEarned:3,
+        alphaGrade:'B',
+        gradePoint:3.00,
+        totalPoint:9.00,
+    }
+]

@@ -5,22 +5,41 @@ import {
   View,
   Image,
   TouchableOpacity,
-  SafeAreaView
+  SafeAreaView,
+  ImageBackground
 } from "react-native";
 import { ICONS, LAYOUT, COLORS } from "../modules";
 import Icon from "react-native-vector-icons/Feather";
+import { BlurView, VibrancyView } from "react-native-blur";
 
-export default (Profile = () => {
+export default (Profile = ({onTranscript}) => {
   return (
-    <SafeAreaView style={styles.container}>
+    <ImageBackground
+      style={styles.container}
+      imageStyle={styles.imagebg}
+      source={ICONS.PUC_CAMPUS}
+      blurRadius={7}
+    >
+      <View
+        // style={{
+        //   position: "absolute",
+        //   top: 0,
+        //   bottom: 0,
+        //   left: 0,
+        //   right: 0,
+        //   backgroundColor: "rgba(246,214,137, 0)"
+        // }}
+      />
       <View style={styles.topProfile}>
         <View style={styles.leftProfile}>
           <Text style={styles.info}>Credit</Text>
           <Text style={styles.info}>118</Text>
         </View>
         <View style={styles.midProfile}>
-          <View style={styles.profileicon}>
-            <Image style={styles.image} source={ICONS.AVATAR} />
+          <View style={styles.shadow}>
+            <View style={styles.profileicon}>
+              <Image style={styles.image} source={ICONS.AVATAR} />
+            </View>
           </View>
         </View>
         <View style={styles.rightProfile}>
@@ -29,13 +48,14 @@ export default (Profile = () => {
         </View>
       </View>
       <View style={styles.profiletext}>
-            <Text style={styles.profileid}>ID: 00092135</Text>
-            <Text style={styles.profilename}>HY Dely Ethan</Text>
-          </View>
-
+        <Text style={styles.profileid}>ID: 00092135</Text>
+        <Text style={[styles.textshadow, styles.profilename]}>
+          HY Dely Ethan
+        </Text>
+      </View>
       <View style={styles.NavContainer}>
         <View style={styles.GridChapter}>
-          <TouchableOpacity style={styles.chapterContaint}>
+          <TouchableOpacity style={styles.chapterContaint} onPress={onTranscript}>
             <View style={styles.cardTest}>
               <Icon name="award" style={styles.NavIcon} />
             </View>
@@ -67,24 +87,27 @@ export default (Profile = () => {
           </TouchableOpacity>
         </View>
       </View>
-    </SafeAreaView>
+    </ImageBackground>
   );
 });
 
 const styles = StyleSheet.create({
+  imagebg: {
+    height: "100%",
+    resizeMode: "cover"
+  },
   container: {
-    flex: 1,
     alignItems: "center",
-    backgroundColor: COLORS.PROFILE,
-    borderBottomLeftRadius: 20,
-    borderBottomRightRadius: 20
+    // borderBottomLeftRadius: 24,
+    // borderBottomRightRadius: 24,
+    overflow: "hidden",
   },
   image: {
     width: "100%",
-    height: "100%",
-    resizeMode: "contain"
+    height: "100%"
   },
   topProfile: {
+    paddingTop: 72,
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center"
@@ -97,10 +120,10 @@ const styles = StyleSheet.create({
   },
   midProfile: { flex: 1, justifyContent: "center", alignItems: "center" },
   profileicon: {
+    borderRadius: 50,
+    overflow: "hidden",
     height: 100,
     width: 100,
-    borderRadius: 100,
-    overflow: "hidden",
     marginVertical: LAYOUT.PADDING
   },
   info: {
@@ -110,7 +133,7 @@ const styles = StyleSheet.create({
     color: COLORS.WHITE
   },
   profilename: {
-    paddingTop: LAYOUT.BODY_HORIZONTAL_ACTION,
+    paddingTop: LAYOUT.BODY_HORIZONTAL,
     textAlign: "center",
     fontSize: 24,
     fontWeight: "600",
@@ -119,7 +142,7 @@ const styles = StyleSheet.create({
   profileid: {
     paddingTop: LAYOUT.PADDING,
     textAlign: "center",
-    color: COLORS.TEXT
+    color: COLORS.WHITE
   },
 
   chapterContaint: {
@@ -128,12 +151,13 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   chapterText: {
+    paddingTop: 8,
     fontSize: 12,
     textAlign: "center",
     color: COLORS.WHITE
   },
   NavIcon: {
-    fontSize: 24,
+    fontSize: 26,
     color: COLORS.WHITE
   },
   GridChapter: {
@@ -144,13 +168,28 @@ const styles = StyleSheet.create({
   NavContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
-    paddingVertical: LAYOUT.BODY_HORIZONTAL_ACTION
+    marginVertical: LAYOUT.BODY_HORIZONTAL_ACTION
   },
-  cardTest: {
+  iconradius: {
     alignItems: "center",
-    height: 40,
-    width: 40,
+    height: 80,
+    width: 80,
     borderRadius: 40,
     justifyContent: "center"
+  },
+  absolute: {
+    position: "absolute"
+  },
+  shadow: {
+    shadowColor: "black",
+    shadowOffset: { width: 0, height: 5 },
+    shadowRadius: 10,
+    shadowOpacity: 1,
+    elevation: 5
+  },
+  textshadow: {
+    textShadowColor: "rgba(0, 0, 0, 0.3)",
+    textShadowOffset: { width: -1, height: 1 },
+    textShadowRadius: 5
   }
 });

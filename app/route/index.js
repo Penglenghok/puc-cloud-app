@@ -13,45 +13,55 @@ import NotificationScreen from "../screen/notification";
 import MoreScreen from "../screen/more";
 import FeedScreen from "../screen/feed";
 import Ionicons from "react-native-vector-icons/Feather";
-import RegisterScreen from '../screen/register'
-import ProgramScreen from '../screen/register/program'
-import RegisterFormScreen from '../screen/register/registerForm'
+import RegisterScreen from "../screen/register";
+import ProgramScreen from "../screen/register/program";
+import RegisterFormScreen from "../screen/register/registerForm";
 import Header from "../components/Header";
+import TranscriptScreen from "../screen/profile/Transcript";
 
-const HomeStack = createStackNavigator({
-  Home: {
-    screen: HomeScreen,
-    navigationOptions: {
-      headerTitle: <Header />
-    }
-  },
-  Register:{
-    screen:RegisterScreen,
-    navigationOptions:{
-      header:null
-    }
-  },
-  Program:{
-    screen:ProgramScreen,
-    navigationOptions:{
-      header:null
-    }
-  },
-  RegisterForm:{
-    screen:RegisterFormScreen,
-    navigationOptions:{
-      header:null
-    }
-  }
-},{mode:'card'});
-const ProfileStack = createStackNavigator(
+const HomeStack = createStackNavigator(
   {
-    Profile: ProfileScreen
+    Home: {
+      screen: HomeScreen,
+      navigationOptions: {
+        headerTitle: <Header />
+      }
+    },
+    Register: {
+      screen: RegisterScreen,
+      navigationOptions: {
+        header: null
+      }
+    },
+    Program: {
+      screen: ProgramScreen,
+      navigationOptions: {
+        header: null
+      }
+    },
+    RegisterForm: {
+      screen: RegisterFormScreen,
+      navigationOptions: {
+        header: null
+      }
+    }
   },
-  {
-    headerMode: "none"
-  }
+  { mode: "card" }
 );
+const ProfileStack = createStackNavigator({
+  Profile: {
+    screen: ProfileScreen,
+    navigationOptions: {
+      header: null
+    }
+  },
+  Transcript: {
+    screen: TranscriptScreen,
+    navigationOptions: {
+      header: null
+    }
+  }
+});
 const NotificationStack = createStackNavigator(
   {
     Notification: NotificationScreen
@@ -68,7 +78,6 @@ const MoreStack = createStackNavigator(
     headerMode: "none"
   }
 );
-
 
 const TabNavigator = createBottomTabNavigator(
   {

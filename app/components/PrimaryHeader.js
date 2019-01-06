@@ -24,7 +24,6 @@ export default (PrimaryHeader = ({goBack}) => {
 const styles = StyleSheet.create({
     header:{
         flexDirection: 'row',
-
         paddingVertical:LAYOUT.BODY_HORIZONTAL
     },
     goBack:{
